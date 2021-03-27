@@ -1,7 +1,7 @@
 # Electron Sample - リンクをクリックすると標準ブラウザで開く
 
 ## 解説ページ
-* []()
+* [[Electron] リンクをクリックすると標準Webブラウザで開く](https://blog.katsubemakito.net/nodejs/electron/click-to-defaultbrowser)
 
 ## 準備
 Gitでリポジトリを取得します。
