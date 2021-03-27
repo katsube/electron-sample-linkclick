@@ -1,0 +1,42 @@
+{
+  "name": "electron-sample-linkclick",
+  "version": "1.0.0",
+  "description": "sample for electron that link click to open browser",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder --mac --x64",
+    "build-win": "electron-builder --win --x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katsube/electron-sample-linkclick.git"
+  },
+  "author": "M.Katsube",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katsube/electron-sample-linkclick/issues"
+  },
+  "homepage": "https://github.com/katsube/electron-sample-linkclick#readme",
+  "build": {
+    "appId": "net.makitokatsube.blog.app.linkclick",
+    "files": [
+      "package.json",
+      "index.js",
+      "public/"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "dmg": {
+      "sign": false
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^12.0.2",
+    "electron-builder": "^22.10.5"
+  }
+}
