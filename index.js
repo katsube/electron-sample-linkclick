@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, shell } = require('electron')
 const path = require('path')
 
 function createWindow (file='index.html') {
@@ -10,6 +10,16 @@ function createWindow (file='index.html') {
       contextIsolation: true
     }
   })
+
+  // リンクをクリックするとWebブラウザで開く
+  const handleUrlOpen = (e, url)=>{
+    if( url.match(/^http/)){
+      e.preventDefault()
+      shell.openExternal(url)
+    }
+  }
+  win.webContents.on('will-navigate', handleUrlOpen);
+  win.webContents.on('new-window', handleUrlOpen);
 
   win.loadFile(`public/${file}`)
 }
